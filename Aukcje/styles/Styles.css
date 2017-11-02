@@ -1,0 +1,339 @@
+﻿body {
+    color: black;
+    background-color: #f5f5f5;
+    font-size: 18px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+a:hover {
+    color: black;
+
+}
+table {
+    border-spacing: 0px;
+}
+table th {
+    text-align: right;
+}
+
+
+.navbar-top,
+.navigation {
+    height: 80px; 
+}
+
+.top-container-content,
+.content-container,
+.navigation {
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.navbar-top {
+    display: block;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-bottom: silver 1px solid;
+    background-color: #ffffff;
+    width: 100%;
+}
+.navigation {
+    position: relative;
+    display: block;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+}
+.logo-pic {
+    float: left;
+    background-color: #f5f5f5;
+    width: 240PX;
+    height: 60px;
+    margin-top: 12px;
+    overflow: hidden;
+    margin-bottom: auto;
+}
+.logo-pic input[type="image"] {
+    width: 240PX;
+    height: 60px;
+    margin-right: 10px;
+}
+.search-bar {
+    float: left;
+    height: 56px;
+    margin-top: 18px;
+}
+.search-bar input[type="text"]{
+    font-size: 18px;
+    font-family: arial;
+    float: left;
+    border-top: darkgrey solid 1px;
+    border-left: darkgrey solid 1px;
+    border-bottom: darkgrey solid 1px;
+    border-right: none;
+    height: 44px;
+    width: 350px;
+    padding-left: 10px;
+}
+.search-bar select {
+    font-size: 18px;
+    height: 48px;
+    position: relative;
+    float: left;
+    border-top: darkgrey solid 1px;
+    border-bottom: darkgrey solid 1px;
+    background: transparent;
+    overflow: hidden;
+    width: 100px;
+}
+.search-bar input[type="image"] {
+    background-color: crimson;
+    position: relative;
+    height: 26px;
+    width: 26px;
+    display: block;
+    float: left;
+    border-top: darkgrey solid 1px;
+    border-right: darkgrey solid 1px;
+    border-bottom: darkgrey solid 1px;
+    padding: 10px;
+}
+
+/*
+    Shopping cart
+
+*/
+.cart {
+    display: block;
+    position: relative;
+    top: 18px;
+    left: 20px;
+    width: 48px;
+    height: 48px;
+    float: left;
+    border-right: 1px dashed gray;
+}
+.cart input[type="image"] {
+    height: 330px;
+    display: block;
+    position: relative;
+
+}
+.cart input[type="image"]:hover {
+    background-color: #DC143C;
+}
+.cart label {
+    text-align: center;
+    font-size: 18px;
+}
+
+/*
+
+    Account
+*/
+
+.AccountStyle {
+    float: left;
+    display: block;
+    position: relative;
+    margin-left:30px;
+    width: 130px;
+    height: 80px;    
+}
+
+.UserPicture{
+    height:40px;
+    width: 40px;
+    overflow: hidden;
+    border: solid 1px gray;
+    display: block;
+    float: left;
+    position: absolute;
+    top: 20px;
+}
+.AccountLinks {
+    position: absolute;
+    margin-top: 10px;
+    display: block;
+    margin-left: 50px;
+    font-size: 14px;
+}
+.AccountLinks ul li{
+    display: block;
+}
+.AccountLinks ul li a{
+    display: block;
+}
+.welcome {
+    margin-left: 0px;
+
+}
+
+
+/*
+
+    sell sometghing
+*/
+
+.new-Item {
+    display: block;
+    position: relative;
+    top: 18px;
+    padding: 3px;
+    width: 48px;
+    height: 48px;
+    float: left;
+    border-left: 1px dashed gray;
+}
+
+/*
+    top line container
+*/
+.top-container {
+    background-color: #fff;
+}
+.categories-bar a {
+    display: block;
+    width: 250px;
+    height: 58px;
+    text-decoration: none;
+    color: black;
+    float: left;
+    padding-left: 10px;
+    background-color: #f5f5f5;
+    font-weight: bold;
+}
+.categories-bar a:visited {
+    color: black;
+
+}
+.categories-bar a:hover {
+    background-color: #f0f0f0;
+}
+.top-container .Hot-offerts ul li{
+    display: inline-block;
+    height: 38px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-family: Open Sans,Arial,Helvetica,sans-serif,SimSun,"宋体";
+    font-weight: bold;
+}
+.top-container .Hot-offerts ul li:hover {
+    background-color: #fafafa;
+}
+
+.content-container {
+    display: block;
+    position: relative;
+    top: 2px;
+    left: -1px;
+}
+
+.SideBar {
+    width: 260px;
+    float: left;
+}
+
+
+/*
+    Displaying Categories
+*/
+.Categories-Section {
+    float: left;
+    display: block;
+    position: relative;
+    top: -16px;
+    left: -40px;
+}
+
+
+.Categories-Section ul li {
+    display: block;
+    height: 40px;
+    width: 260px;
+    background-color: #FFF;
+}
+.Categories-Section ul li a{
+    padding-top: 10px;
+    padding-left: 10px;
+    display: block;
+    height: 28px;
+}
+.Categories-Section ul li a:hover{
+    background-color: #FFFFFF;
+    border-bottom: 1px gray solid;
+    border-left: 1px gray solid;
+    border-top: 1px gray solid;
+}
+.ads {
+    float: left;
+    display: none;
+}
+.Electronics {
+    float: left;
+    display: none;
+}
+#AAds a:hover {
+
+    display: block;
+}
+a:hover + div {
+    display: block;
+}
+.Gallery {
+    display: block;
+    position: relative;
+    top: -16px;
+    width: 900px;
+    float: left;
+
+}
+.Gallery img {
+    background-color: khaki;
+
+}
+
+/*
+    Promotions
+*/
+.Promotions-Bar{
+    display: block;
+    position: relative;
+    top: 500px;
+    background-color:silver;
+    border:1px solid Gray;
+}
+
+
+
+
+/*
+    Displaying Auctions
+*/
+.TreeViewer {
+    width: 750px;
+    position: relative;
+    left: 280px;
+    text-align: left;
+    background-color: #d0d0d0;
+    max-height:40px;
+}
+.TreeViewerContent
+{
+    position: relative;
+    
+}
+
+.AuctionImage {
+    height: 50px;
+    width: 50px; 
+}
+.displayingAuctions {
+    width: 940px;
+}

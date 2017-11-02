@@ -1,0 +1,78 @@
+﻿body {
+    color: black;
+}
+.SiteMapContainer {
+    border-bottom: 1px gray solid;
+
+}
+.MainInformationContainer {
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 314px;
+    background-color: #d4d4d4;
+    
+}
+.AuctionIDDIV {
+    float: left;
+}
+.AuctionImage {
+    float: left;
+    height: 300px;
+    width: 300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    display: block;
+}
+
+.MainInformationContainer input[type="image"] {
+    float: left;
+    max-width: 100%;
+    max-height: 100%;
+}
+.MainInformationContainer span {
+    color: #505050;
+    font-size: 14px;
+    padding: 5px;
+}
+
+.MainInformationContainer .DetailsContainer {
+    display: block;
+    position: absolute;
+    left: 400px;
+    margin-right: 55px;
+}
+
+.MainInformationContainer ul {
+    color: black;
+    list-style-type: none;
+}
+.MainInformationContainer .DetailsContainer p {
+    margin: 0px;
+}
+
+.MainInformationContainer .DetailsContainer input[type="submit"]{
+    position: absolute;
+    top: 150px;
+    left: 350px;
+    background-color: brown;
+    margin-left: 200px;
+}
+
+.DescriptionContainer {
+    width: 1150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #555555;
+    min-height: 60px;
+}
+ .Price {
+    font-size: 25px;
+    color: indianred;
+    font-weight: bold;
+}
+ .PriceValue {
+     position: relative;
+     left: -15px;
+ }

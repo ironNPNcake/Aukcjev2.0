@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SitePoor.master.cs" Inherits="Aukcje.SitePoor" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="navbar-top">
+                <div class="navigation">
+                    <div class="logo-pic">
+                        <asp:ImageButton runat="server" PostBackUrl="~/Default.aspx" ImageUrl="~/Pictures/Auction.png"/>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div style="position: absolute; left: 1500px; top: 30px;">
+            <asp:DropDownList runat="server" ID="ddlLanguage" AutoPostBack="True">
+                <asp:ListItem Text="<%$Resources: Resource,LanguageEN %>" Value="en"></asp:ListItem>
+                <asp:ListItem Text="<%$Resources:Resource,LanguagePL %>" Value="pl"></asp:ListItem>
+            </asp:DropDownList>
+        </div>
+    </form>
+</body>
+</html>

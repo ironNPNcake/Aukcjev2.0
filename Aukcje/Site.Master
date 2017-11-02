@@ -1,0 +1,88 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Aukcje.Site" %>
+
+<%@ Register Src="~/Controls/SearchBar.ascx" TagPrefix="uc" TagName="SearchBar" %>
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <div class="navbar-top" runat="server">
+                <div class="navigation" runat="server">
+                    <div class="logo-pic">
+                        <asp:ImageButton runat="server" PostBackUrl="~/Default.aspx" ID="ImageButtonLogo" AlternateText="tu bedzie logo" ImageUrl="~/Pictures/Auction.png" />
+                    </div>
+
+                    <uc:SearchBar runat="server" id="SearchBar" />
+                    
+                    <div class="cart">
+                        <asp:ImageButton runat="server" ImageUrl="Pictures/Shopping-Cart-icon.png" Height="33px" />
+                        <asp:Label runat="server" Text="<%$Resources:Resource,Cart %>"></asp:Label>
+                    </div>
+
+                    <div class="AccountStyle">
+                        <asp:LoginView ID="LoginView1" runat="server">
+                            <AnonymousTemplate>
+                                <div class="UserPicture">
+                                    <asp:Image runat="server" ImageUrl="~/Pictures/AnonymousPicture.png" />
+                                </div>
+                                <div class="AccountLinks">
+                                    <ul style="padding: 0px;">
+                                        <li>
+                                            <asp:LinkButton runat="server" PostBackUrl="~/Membership/SignUp.aspx"><asp:Literal runat="server" Text="<%$Resources:Resource,SignUp %>"></asp:Literal></asp:LinkButton></li>
+                                        <li>
+                                            <asp:LinkButton runat="server" PostBackUrl="~/Membership/Login.aspx"><asp:Literal runat="server" Text="<%$Resources:Resource,Login %>"></asp:Literal></asp:LinkButton></li>
+                                    </ul>
+                                </div>
+
+
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <div class="UserPicture">
+                                    <asp:Image runat="server" ImageUrl="~/Pictures/AnonymousPicture.png" />
+                                </div>
+                                <div class="AccountLinks" style="float: left">
+                                    <div class="welcome">
+                                        <asp:LinkButton runat="server" ID="ToTheAccountPage" PostBackUrl="UserAccountPage.aspx">
+                                            hello<br />
+                                            <asp:LoginName ID="LoginName1" runat="server" />
+                                        </asp:LinkButton>
+                                    </div>
+                                    <asp:Button runat="server" ID="Logout" Text="<%$resources:Resource,Logout %>" OnClick="Logout_OnClick" />
+                                </div>
+
+                            </LoggedInTemplate>
+
+                        </asp:LoginView>
+
+                    </div>
+                    <div class="new-Item">
+                        <asp:LinkButton runat="server" PostBackUrl="InsertNewItem.aspx"><asp:Literal runat="server" Text="<%$Resources:Resource,SellSomething %>"></asp:Literal></asp:LinkButton>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div style="margin-top: 70px;"></div>
+
+            <div style="position: absolute; left: 1500px; top: 30px;">
+                <asp:DropDownList runat="server" ID="ddlLanguage" AutoPostBack="True" OnSelectedIndexChanged="ddlLanguage_OnSelectedIndexChanged" >
+                    <asp:ListItem Text="<%$Resources: Resource,LanguageEN %>" Value="en" Selected="True"></asp:ListItem>
+                    <asp:ListItem Text="<%$Resources:Resource,LanguagePL %>" Value="pl" ></asp:ListItem>
+                </asp:DropDownList>
+            </div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="footer">
+        </div>
+    </form>
+</body>
+</html>
