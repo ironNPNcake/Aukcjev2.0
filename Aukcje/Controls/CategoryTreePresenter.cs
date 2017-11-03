@@ -10,13 +10,8 @@ namespace Aukcje.Controls
     {
         public void UpdateTree()
         {
-            Menu newMenu = new Menu();
-            MenuItem root = new MenuItem("Categories");
-            newMenu.Items.Add(root);
-            if (View.Menu.Items.Count > 1)
-                View.Menu.Items.RemoveAt(1);
-
-
+            View.Menu.Items.Clear();
+            View.Menu.Items.Add(RootMenu());
             string categoryString = View.queryString["category"];
             int CategoryInt = Convert.ToInt32(categoryString);
             if (!String.IsNullOrEmpty(categoryString))
@@ -24,12 +19,29 @@ namespace Aukcje.Controls
                 string CategoryRes = Filters.TryFindCategoryResource(CategoryInt);
                 View.Menu.Items.Add(new System.Web.UI.WebControls.MenuItem(CategoryRes, "0", null, $"~/AuctionsList.aspx?category={categoryString}"));
             }
-            View.Menu = newMenu;
         }
         public void UpdateTree(MenuEventArgs e)
         {
             UpdateTree();
 
+        }
+        private MenuItem RootMenu()
+        {
+            string cat = HttpContext.GetGlobalResourceObject("Resource", "Categories").ToString();
+            MenuItem root = new MenuItem(cat);
+            List<MenuItem> kids = new List<MenuItem>();
+            List<CategoriesTable> list;
+            using (var ctx = new bazaEntities())
+            {
+                list = ctx.CategoriesTables.ToList();
+            }
+            foreach (CategoriesTable catTable in list)
+            {
+                string resCategory = Filters.TryFindCategoryResource(catTable.ID);
+                MenuItem temp = new MenuItem(resCategory, "0", null, $"~/AuctionsList.aspx?category={catTable.ID}");
+                root.ChildItems.Add(temp);
+            }
+            return root;
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="CategoryTree.ascx.cs" Inherits="Aukcje.Controls.CategoryTree" %>
 
-<asp:Menu ID="CategoryMenu" runat="server" Orientation="Horizontal" Height="40px" BackColor="#D0D0D0" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#666666" StaticSubMenuIndent="10px" OnMenuItemClick="Menu1_MenuItemClick" Font-Bold="True" DataSourceID="SiteMapDataSource" >
+<asp:Menu ID="CategoryMenu" runat="server" Orientation="Horizontal" Height="40px" BackColor="#D0D0D0" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="Medium" ForeColor="#666666" StaticSubMenuIndent="10px" OnMenuItemClick="Menu1_MenuItemClick" Font-Bold="True" ><%--DataSourceID="SiteMapDataSource" >--%>
     <DynamicHoverStyle BackColor="#e0e0e0" ForeColor="White" />
     <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
     <DynamicMenuStyle BackColor="#E3EAEB" />

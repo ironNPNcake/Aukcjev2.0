@@ -17,11 +17,6 @@ namespace Aukcje.Controls
                 Presenter.UpdateTree();
                 CategoryMenu.DataBind();
             }
-            Menu newMenu = new Menu();
-            MenuItem root = new MenuItem("Categories");
-            newMenu.Items.Add(root);
-            CategoryMenu = newMenu;
-            CategoryMenu.DataBind();
 
         }
         public System.Collections.Specialized.NameValueCollection queryString
