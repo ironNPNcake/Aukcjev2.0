@@ -11,7 +11,8 @@ namespace Aukcje.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            AttachPresenter();
+            Presenter.UpdateColors();
         }
         public CheckBoxList FilterColorCheckBoxList
         {

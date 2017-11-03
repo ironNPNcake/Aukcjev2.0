@@ -216,7 +216,6 @@
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Generic\BasePresenter.cs" />
-    <Compile Include="BasePresenter.cs" />
     <Compile Include="Generic\BaseView.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -288,9 +287,9 @@
     <Compile Include="Controls\ICommentsSectionView.cs" />
     <Compile Include="Controls\IYourAuctionsView.cs" />
     <Compile Include="Controls\YourAuctionsPresenter.cs" />
-    <Compile Include="Views\IAuctionsListView.cs" />
-    <Compile Include="Views\ISellerPageView.cs" />
-    <Compile Include="Views\ISingleAuctionView.cs" />
+    <Compile Include="IViews\IAuctionsListView.cs" />
+    <Compile Include="IViews\ISellerPageView.cs" />
+    <Compile Include="IViews\ISingleAuctionView.cs" />
     <Compile Include="Presenters\SellerPagePresenter.cs" />
     <Compile Include="SingleAuction.aspx.cs">
       <DependentUpon>SingleAuction.aspx</DependentUpon>
@@ -331,7 +330,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Presenters\InsertNewItemPresenter.cs" />
-    <Compile Include="Views\IInsertNewItemView.cs" />
+    <Compile Include="IViews\IInsertNewItemView.cs" />
     <Compile Include="PicturesHandler.ashx.cs">
       <DependentUpon>PicturesHandler.ashx</DependentUpon>
     </Compile>

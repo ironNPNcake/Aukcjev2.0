@@ -50,5 +50,27 @@ namespace Aukcje
                 }
             }
         }
+        public static string TryFindCategoryResource(string CategoryName)
+        {
+            Models.Categories catEnum;
+            Enum.TryParse(CategoryName, out catEnum);
+            return TryFindCategoryResource((int)catEnum);
+        }
+        public static string TryFindCategoryResource(int CategoryInt)
+        {
+            string CategoryRes;
+            using (var ctx = new bazaEntities())
+            {
+                CategoryRes = ctx.CategoriesTables.Where(p => p.ID == CategoryInt).Select(p => p.CategoryResourceName).SingleOrDefault();
+            }
+            object tempCategoryRes = HttpContext.GetGlobalResourceObject("Resource", ((Models.Categories)CategoryInt).ToString());
+            if (tempCategoryRes != null)
+            {
+                CategoryRes = tempCategoryRes.ToString();
+            }
+            return CategoryRes;
+
+        }
+
     }
 }

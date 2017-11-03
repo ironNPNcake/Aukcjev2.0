@@ -21,7 +21,7 @@ namespace Aukcje
         {
             if (Page.IsPostBack)
             {
-                ListView1.DataBind();
+                ListViewAuctionsList.DataBind();
             }
         }
         public IEnumerable Select()

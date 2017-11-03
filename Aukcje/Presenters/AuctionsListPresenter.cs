@@ -10,6 +10,7 @@ namespace Aukcje
     public class AuctionsListPresenter : BasePresenter<AuctionsList>
     {
 
+        
         public IEnumerable SelectAuctionsList()
         {
             IEnumerable<Auction> list;
@@ -19,8 +20,8 @@ namespace Aukcje
             }
             list = list.Where(p => p.status == "otwarte");
             //catgory filtering
-                list = list.Where(p => p.Category == (int)View.FilterCategory);
-                //     ((Aukcje.Site)this.Page.Master).changeValueInDropDowCategoryList((int)category);
+            list = list.Where(p => p.Category == (int)View.FilterCategory);
+            //     ((Aukcje.Site)this.Page.Master).changeValueInDropDowCategoryList((int)category);
 
             if (!String.IsNullOrEmpty(View.SearchedItem))
             {
@@ -31,18 +32,21 @@ namespace Aukcje
 
             list = list.Where(p => p.Price >= View.FilterLowPrice && p.Price <= View.FilterHighPrice);
             //color filtering
-            foreach (ListItem listItem in View.FilterColorCheckBoxList.Items)
+
+            List<Auction> tempList = new List<Auction>();
+            if (View.FilterColorCheckBoxList.SelectedIndex > -1)
             {
-                if (listItem.Selected)
+                foreach (ListItem listItem in View.FilterColorCheckBoxList.Items)
                 {
-                    list = list.Where(p =>
-                        (View.FilterColorCheckBoxList.Items[0].Selected ? p.Color == 0 : false) ||
-                        (View.FilterColorCheckBoxList.Items[1].Selected ? p.Color == 1 : false) ||
-                        (View.FilterColorCheckBoxList.Items[2].Selected ? p.Color == 2 : false)
-                    );
-                    break;
+                    if (listItem.Selected)
+                    {
+                        tempList.AddRange(list.Where(p => p.Color == Convert.ToInt32(listItem.Value)).ToList());
+                    }
                 }
+                list = tempList;
             }
+
+
 
             foreach (Auction auction in list)
             {

@@ -12,7 +12,7 @@
         <%-- <asp:LinqDataSource ID="LinqDataSource1" runat="server" Select="pokaz_to"></asp:LinqDataSource> --%>
 
 
-        <asp:ListView ID="ListView1" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
+        <asp:ListView ID="ListViewSingleAuction" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
 
             <ItemTemplate>
 

@@ -13,21 +13,30 @@ namespace Aukcje.Controls {
     public partial class CategoryTree {
         
         /// <summary>
-        /// Menu1 control.
+        /// CategoryMenu control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu Menu1;
+        protected global::System.Web.UI.WebControls.Menu CategoryMenu;
         
         /// <summary>
-        /// SiteMapDataSource1 control.
+        /// SiteMapDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource;
+        
+        /// <summary>
+        /// ObjectDataSource4ColorFilters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource4ColorFilters;
     }
 }

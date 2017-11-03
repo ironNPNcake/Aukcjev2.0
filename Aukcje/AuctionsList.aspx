@@ -32,24 +32,13 @@
 
         <div class="TreeViewer">
             <div class="TreeViewerContent" style="height: 40px !important;">
-                <%--<asp:TreeView runat="server"  Font-Size="Large" Font-Bold="True">
-                    <Nodes>
-                        <asp:TreeNode Text="Categories" Value="Categories">
-                            <asp:TreeNode Text="Electronics" Value="Electronics" NavigateUrl="AuctionsList.aspx?category=0"></asp:TreeNode>
-                            <asp:TreeNode Text="Clothes" Value="Clothes" NavigateUrl="AuctionsList.aspx?category=1"></asp:TreeNode>
-                            <asp:TreeNode Text="Home &amp; Garden" Value="Home &amp; Garden" NavigateUrl="AuctionsList.aspx?category=2"></asp:TreeNode>
-                        </asp:TreeNode>
-                    </Nodes>
-                </asp:TreeView>
-                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />--%>
-
                 <uc:CategoryTree runat="server" ID="CategoryTree" />
             </div>
         </div>
 
 
         <div class="displayingAuctions">
-            <asp:ListView ID="ListView1" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
+            <asp:ListView ID="ListViewAuctionsList" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
                 <LayoutTemplate>
                     <table runat="server" id="table1">
                         <tr>
@@ -78,6 +67,9 @@
                     </tr>
 
                 </ItemTemplate>
+                <EmptyDataTemplate>
+                    <asp:Label runat="server" Text="We are Sorry there is no auctions that match to your Filters."></asp:Label>
+                </EmptyDataTemplate>
             </asp:ListView>
         </div>
     </div>

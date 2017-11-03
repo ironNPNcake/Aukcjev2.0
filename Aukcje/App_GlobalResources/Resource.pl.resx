@@ -183,4 +183,7 @@
   <data name="StatusOpen" xml:space="preserve">
     <value>Otwarta</value>
   </data>
+  <data name="Black" xml:space="preserve">
+    <value>Czarny</value>
+  </data>
 </root>

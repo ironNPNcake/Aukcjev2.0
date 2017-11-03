@@ -50,6 +50,10 @@ namespace Aukcje
             get { return (Models.Colors) DropDownColorList.SelectedIndex; }
             set { DropDownColorList.SelectedIndex = (int)value; }
         }
+        public int AuctionColorInt
+        {
+            get { return DropDownColorList.SelectedIndex+1; }
+        }
 
         public string AuctionDescrition
         {

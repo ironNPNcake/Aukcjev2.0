@@ -15,7 +15,13 @@ namespace Aukcje.Controls
             {
                 AttachPresenter();
                 Presenter.UpdateTree();
+                CategoryMenu.DataBind();
             }
+            Menu newMenu = new Menu();
+            MenuItem root = new MenuItem("Categories");
+            newMenu.Items.Add(root);
+            CategoryMenu = newMenu;
+            CategoryMenu.DataBind();
 
         }
         public System.Collections.Specialized.NameValueCollection queryString
@@ -29,7 +35,11 @@ namespace Aukcje.Controls
         {
             get
             {
-                return Menu1;
+                return CategoryMenu;
+            }
+            set
+            {
+                CategoryMenu = value;
             }
         }
 

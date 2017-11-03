@@ -3,9 +3,10 @@
 
 <div>
     <h4>Color: </h4>
-    <asp:CheckBoxList runat="server" ID="checkBoxFilteringSet">
-        <asp:ListItem>Black</asp:ListItem>
-        <asp:ListItem>Rose</asp:ListItem>
-        <asp:ListItem>White</asp:ListItem>
+    <asp:CheckBoxList runat="server" ID="checkBoxFilteringSet" DataSourceID="ObjectDataSource4ColorFilters" DataTextField="FilterResourceName" DataValueField="ID" >
     </asp:CheckBoxList>
+
+    <asp:ObjectDataSource ID="ObjectDataSource4ColorFilters" runat="server" SelectMethod="ReturnFiltersList" TypeName="Aukcje.Filters"></asp:ObjectDataSource>
+
+
 </div>

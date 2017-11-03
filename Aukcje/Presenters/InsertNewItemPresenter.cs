@@ -27,7 +27,7 @@ namespace Aukcje
                     Title = View.AuctionName,
                     //Category = (int)View.AuctionCategoryType,     //this is useful validator if User want to add item that category is not added but now when Categories are added dynamically it is useless
                     Category = View.AuctionCategoryTypeInt,
-                    Color = (int)View.AuctionColor,
+                    Color = View.AuctionColorInt,
                     Description = View.AuctionDescrition,
                     Price = View.AuctionPrice,
                     seller = System.Web.Security.Membership.GetUser().UserName,
