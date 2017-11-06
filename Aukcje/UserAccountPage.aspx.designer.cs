@@ -13,6 +13,15 @@ namespace Aukcje {
     public partial class UserAccountPage {
         
         /// <summary>
+        /// AccountDetails control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Aukcje.Controls.AccountDetails AccountDetails;
+        
+        /// <summary>
         /// FavouritesList control.
         /// </summary>
         /// <remarks>

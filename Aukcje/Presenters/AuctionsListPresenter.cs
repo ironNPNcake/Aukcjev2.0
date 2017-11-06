@@ -20,6 +20,7 @@ namespace Aukcje
             }
             list = list.Where(p => p.status == "otwarte");
             //catgory filtering
+            if((int)View.FilterCategory>0)
             list = list.Where(p => p.Category == (int)View.FilterCategory);
             //     ((Aukcje.Site)this.Page.Master).changeValueInDropDowCategoryList((int)category);
 

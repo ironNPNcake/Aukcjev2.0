@@ -34,7 +34,7 @@
                     <asp:Label runat="server" Text='<%#Eval("aukcja.Title") %>'></asp:Label>
                 </td>
                 <td>
-                    <asp:Label runat="server" Text='<%#Eval("aukcja.Price") %>'></asp:Label>
+                    <asp:Label runat="server" Text='<%#String.Format("{0:C}",Eval("aukcja.Price")) %>'></asp:Label>
                 </td>
                 <td>
                     <asp:Label runat="server" Text='<%#Eval("ConsumerName") %>'></asp:Label>

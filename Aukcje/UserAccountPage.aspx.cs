@@ -13,6 +13,10 @@ namespace Aukcje
         {
             if(!Request.IsAuthenticated)
                 Page.Response.Redirect("Default.aspx");
+            if(!Page.IsPostBack)
+            {
+                //AccountDetails.Image.ImageUrl = "~/Pictures/Auction01.jpg";
+            }
         }
     }
 }

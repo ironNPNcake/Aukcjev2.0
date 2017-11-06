@@ -1,6 +1,8 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Aukcje.Site" %>
 
 <%@ Register Src="~/Controls/SearchBar.ascx" TagPrefix="uc" TagName="SearchBar" %>
+<%@ Register Src="~/Controls/UserPictureMin.ascx" TagPrefix="uc" TagName="UserPictureMin" %>
+
 
 
 <!DOCTYPE html>
@@ -46,9 +48,7 @@
 
                             </AnonymousTemplate>
                             <LoggedInTemplate>
-                                <div class="UserPicture">
-                                    <asp:Image runat="server" ImageUrl="~/Pictures/AnonymousPicture.png" />
-                                </div>
+                                <uc:UserPictureMin runat="server" id="UserPictureMin" />
                                 <div class="AccountLinks" style="float: left">
                                     <div class="welcome">
                                         <asp:LinkButton runat="server" ID="ToTheAccountPage" PostBackUrl="UserAccountPage.aspx">

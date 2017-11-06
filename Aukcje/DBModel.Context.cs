@@ -25,11 +25,11 @@ namespace Aukcje
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<aspnet_Membership> aspnet_Membership { get; set; }
         public virtual DbSet<aspnet_Users> aspnet_Users { get; set; }
         public virtual DbSet<Auction> Auctions { get; set; }
-        public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<CategoriesTable> CategoriesTables { get; set; }
+        public virtual DbSet<Comment> Comments { get; set; }
         public virtual DbSet<FiltersTable> FiltersTables { get; set; }
+        public virtual DbSet<aspnet_Membership> aspnet_Membership { get; set; }
     }
 }

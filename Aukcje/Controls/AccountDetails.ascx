@@ -1,10 +1,10 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AccountDetails.ascx.cs" Inherits="Aukcje.Controls.AccountDetails" %>
 
-<asp:ListView ID="ListView2" runat="server" SelectMethod="SelectUser" ItemType="Aukcje.UserWithRating">
+<asp:ListView ID="ListViewAccountDetails" runat="server" SelectMethod="SelectUser" ItemType="Aukcje.UserWithRating">
     <ItemTemplate>
         <div class="PersonalInfoContainer">
             <div class="UserBigPicture">
-                <asp:Image runat="server" ImageUrl="~/Pictures/loggedUser.jpg" />
+                <asp:Image runat="server" ID="UserPicture" OnDataBinding="UserPicture_DataBinding" OnInit="UserPicture_Init" />
             </div>
             <div class="PersonalInfoDetails">
                 <asp:Label runat="server" Text='<%$Resources:Resource,UserName %>'></asp:Label>

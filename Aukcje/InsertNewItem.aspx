@@ -72,7 +72,7 @@
                             <td>
                                 <asp:Label runat="server" Text="Image: "></asp:Label></td>
                             <td>
-                                <asp:FileUpload runat="server" ID="FileUpload1" /></td>
+                                <asp:FileUpload runat="server" ID="FileUpload" /></td>
                         </tr>
                         <tr>
                             <td colspan="2">

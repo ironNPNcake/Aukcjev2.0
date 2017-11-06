@@ -54,7 +54,7 @@ namespace Aukcje
             {
                 if(!String.IsNullOrEmpty(textHighPrice.Text))
                     return Convert.ToDecimal(textHighPrice.Text);
-                return 99999;
+                return 999999999999999999;
             }
             set { textHighPrice.Text = value.ToString(); }
         }
@@ -66,7 +66,7 @@ namespace Aukcje
                 string categoryID = Request.QueryString["category"];
                 if (!string.IsNullOrEmpty(categoryID))
                     return (Models.Categories)Convert.ToInt32(categoryID);
-                return (Models.Categories)999;
+                return (Models.Categories)0;
             }
 
             set

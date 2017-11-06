@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="855527c7b62d4b948e0dc44e75edd51d" Name="Diagram1">
-        <EntityTypeShape EntityType="bazaModel.aspnet_Membership" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="bazaModel.aspnet_Users" Width="1.5" PointX="0.75" PointY="2.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="bazaModel.Auction" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bazaModel.Comment" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <AssociationConnector Association="bazaModel.FK__aspnet_Me__UserI__22AA2996" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="bazaModel.CategoriesTable" Width="1.5" PointX="7.875" PointY="3.625" />
-        <EntityTypeShape EntityType="bazaModel.FiltersTable" Width="1.5" PointX="9.875" PointY="3.625" />
+      <Diagram DiagramId="01fbc8fc5d694c4ea873c64e731d3b19" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.aspnet_Users" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Auction" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.CategoriesTable" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Comment" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.FiltersTable" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.aspnet_Membership" Width="1.5" PointX="3" PointY="1" />
+        <AssociationConnector Association="Model.FK__aspnet_Me__UserI__22AA2996" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

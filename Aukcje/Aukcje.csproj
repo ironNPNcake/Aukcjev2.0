@@ -115,6 +115,7 @@
     <Content Include="Controls\FavouritesList.ascx" />
     <Content Include="Controls\FiltersCheckBoxes.ascx" />
     <Content Include="Controls\SearchBar.ascx" />
+    <Content Include="Controls\UserPictureMin.ascx" />
     <Content Include="DBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBModel.edmx</DependentUpon>
@@ -159,6 +160,7 @@
     <Content Include="DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Content>
+    <Content Include="UserPictureHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -202,6 +204,9 @@
     <Compile Include="CategoriesTable.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Comment.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controls\FiltersCheckBoxes.ascx.cs">
       <DependentUpon>FiltersCheckBoxes.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -211,6 +216,29 @@
     </Compile>
     <Compile Include="Controls\FiltersCheckBoxesPresenter.cs" />
     <Compile Include="Controls\LeftSideMenuPresenter.cs" />
+    <Compile Include="Controls\UserPictureMin.ascx.cs">
+      <DependentUpon>UserPictureMin.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\UserPictureMin.ascx.designer.cs">
+      <DependentUpon>UserPictureMin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserPictureMinPresenter.cs" />
+    <Compile Include="DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Filters.cs" />
     <Compile Include="FiltersTable.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
@@ -218,9 +246,6 @@
     <Compile Include="Generic\BasePresenter.cs" />
     <Compile Include="Generic\BaseView.cs">
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Comment.cs">
-      <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controls\BasePresenter4Control.cs" />
     <Compile Include="Controls\BaseView4Control.cs">
@@ -253,21 +278,6 @@
     </Compile>
     <Compile Include="Controls\SearchBarPresenter.cs" />
     <Compile Include="CurrencyConverter.cs" />
-    <Compile Include="DBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DBModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Generic\IBasePresenter.cs" />
     <Compile Include="Generic\IBaseView.cs" />
     <Compile Include="Presenters\AuctionsListPresenter.cs" />
@@ -402,6 +412,9 @@
       <DependentUpon>UserAccountPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\UserWithRating.cs" />
+    <Compile Include="UserPictureHandler.ashx.cs">
+      <DependentUpon>UserPictureHandler.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_GlobalResources\Resource.resx">

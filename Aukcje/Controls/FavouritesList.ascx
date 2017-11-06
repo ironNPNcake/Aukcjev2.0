@@ -24,7 +24,7 @@
                 </asp:LinkButton>
             </td>
             <td style="width:200px; text-align:center;">
-                <asp:Label runat="server" Text ='<%#Eval("Price") %>' />
+                <asp:Label runat="server" Text ='<%#String.Format("{0:C}", Eval("Price")) %>' />
             </td>
             <td style="width:300px; text-align:center;">
                 <asp:Label runat="server" Text='<%#Eval("Status") %>' />

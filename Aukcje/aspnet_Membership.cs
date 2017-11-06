@@ -37,6 +37,7 @@ namespace Aukcje
         public string Comment { get; set; }
         public Nullable<int> Rating { get; set; }
         public string FavouritesItems { get; set; }
+        public byte[] Image { get; set; }
     
         public virtual aspnet_Users aspnet_Users { get; set; }
     }

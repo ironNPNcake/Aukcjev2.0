@@ -9,7 +9,16 @@ namespace Aukcje.Controls
     {
         public string QueryString()
         {
-            return $"product={View.SearchedItem}&category={(int)View.FilterCategory}";
+            if((int)View.FilterCategory>0)
+             return $"product={View.SearchedItem}&category={(int)View.FilterCategory}";
+            return $"product={View.SearchedItem}";
+        }
+        public IEnumerable<string> SelectCategories()
+        {
+            List<string> list = new List<string> { "All Categories" };
+             list.AddRange(Filters.ReturnCategoriesList().Select(p => p.CategoryResourceName).ToList<string>());
+
+            return list;
         }
     }
 }

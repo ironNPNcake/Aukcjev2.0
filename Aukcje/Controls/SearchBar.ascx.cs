@@ -54,5 +54,10 @@ namespace Aukcje.Controls
                 return Presenter.QueryString();
             }
         }
+        public IEnumerable<string> SelectCategories()
+        {
+            AttachPresenter();
+            return Presenter.SelectCategories();
+        }
     }
 }

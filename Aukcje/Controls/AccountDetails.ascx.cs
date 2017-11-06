@@ -29,5 +29,16 @@ namespace Aukcje.Controls
                 return HttpContext.Current.Request.QueryString["UID"];
             }
         }
+        public Image Image { get; set; }
+
+        protected void UserPicture_DataBinding(object sender, EventArgs e)
+        {
+            Image = ListViewAccountDetails.Items[0].FindControl("UserPicture") as Image;
+        }
+
+        protected void UserPicture_Init(object sender, EventArgs e)
+        {
+         //   Image = ListViewAccountDetails.Items[0].FindControl("UserPicture") as Image;
+        }
     }
 }

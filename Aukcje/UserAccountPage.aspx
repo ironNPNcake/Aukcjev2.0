@@ -14,7 +14,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content-container">
         
-        <uc:AccountDetails runat="server"/>
+        <uc:AccountDetails ID="AccountDetails" runat="server"/>
 
         <uc:YourAuctions runat="server" />
 

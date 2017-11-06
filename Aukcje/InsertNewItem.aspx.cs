@@ -63,7 +63,7 @@ namespace Aukcje
 
         public byte[] AuctionImageBytes
         {
-            get { return FileUpload1.FileBytes; }
+            get { return FileUpload.FileBytes; }
         }
 
         public System.Web.UI.WebControls.Label ControlLabel
