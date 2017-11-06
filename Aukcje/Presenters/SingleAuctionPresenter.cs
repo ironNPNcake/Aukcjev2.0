@@ -25,33 +25,41 @@ namespace Aukcje
 
         public void AddToFavourites()
         {
-            aspnet_Membership Users;
-            string UserName = View.UserName;
-            try
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                using (var ctx = new bazaEntities())
+                aspnet_Membership Users;
+                string UserName = View.UserName;
+                try
                 {
-                    Users = (from _User in ctx.aspnet_Users
-                             join tempUser in ctx.aspnet_Membership
-                             on _User.UserId equals tempUser.UserId
-                             where _User.UserName == UserName
-                             select tempUser).First();
-                    string fav = Users.FavouritesItems;
-                    if(string.IsNullOrEmpty(fav)|| fav.IndexOf(View.Id.ToString()+'|') < 0)
+                    using (var ctx = new bazaEntities())
                     {
-                        fav += $"{View.Id.ToString()}|";
+                        Users = (from _User in ctx.aspnet_Users
+                                 join tempUser in ctx.aspnet_Membership
+                                 on _User.UserId equals tempUser.UserId
+                                 where _User.UserName == UserName
+                                 select tempUser).First();
+                        string fav = Users.FavouritesItems;
+                        if (string.IsNullOrEmpty(fav) || fav.IndexOf(View.Id.ToString() + '|') < 0)
+                        {
+                            fav += $"{View.Id.ToString()}|";
+                        }
+                        Users.FavouritesItems = fav;
+                        ctx.SaveChanges();
                     }
-                    Users.FavouritesItems = fav;
-                    ctx.SaveChanges();
+                    CheckFavourites();
                 }
-                CheckFavourites();
+
+                catch
+                {
+                    HttpContext.Current.Response.Clear();
+                    HttpContext.Current.Response.Write("Something Went Wrong Try Again Later");
+                    HttpContext.Current.Response.End();
+                    HttpContext.Current.Response.Flush();
+                }
             }
-            catch
+            else
             {
-                HttpContext.Current.Response.Clear();
-                HttpContext.Current.Response.Write("Something Went Wrong Try Again Later");
-                HttpContext.Current.Response.End();
-                HttpContext.Current.Response.Flush();
+                View.LabelAddToFavourites.Text = "You must be logged in to add auctions to favourites";
             }
         }
 
@@ -73,8 +81,8 @@ namespace Aukcje
                 }
                 if (fav.IndexOf(View.Id.ToString() + '|') > -1)
                 {
-                    //View.LabelAddToFavourites.Text = "Already added to Favourites";
-                    View.ImageButtonAddToFavourites.ImageUrl = "~/Pictures/fill.jpg";
+                    View.LabelAddToFavourites.Text = "Already added to Favourites";
+                    View.ImageButtonAddToFavourites.ImageUrl = "~/Pictures/fill.png";
                     View.ImageButtonAddToFavourites.Enabled = false;
                 }
             }

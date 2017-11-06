@@ -5,9 +5,6 @@ using System.Web;
 
 namespace Aukcje.Models
 {
-    public class Filtering
-    {
-    }
     public enum Categories
     {
         All,

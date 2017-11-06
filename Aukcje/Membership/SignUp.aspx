@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="MainContent" runat="server">
     <div style="margin-top: 70px;"></div>
     <div class="content-container">
         <asp:createuserwizard runat="server" ID="ctl00" BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="Medium" Height="345px" Width="394px" FinishDestinationPageUrl="~/Default.aspx">

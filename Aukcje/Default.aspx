@@ -2,7 +2,7 @@
 
 <%@ Register TagPrefix="uc" TagName="CategoriesMenu" Src="~/Controls/LeftSideMenu.ascx" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
     <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
 </asp:Content>
 <asp:Content ID="main" ContentPlaceHolderID="MainContent" runat="server">

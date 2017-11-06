@@ -11,7 +11,7 @@ namespace Aukcje
     {
         decimal FilterLowPrice { get; set; }
         decimal FilterHighPrice { get; set; }
-        Models.Categories FilterCategory { get; set; }
+        Models.Categories FilterCategory { get; }
         string SearchedItem { get; }
     }
 }

@@ -47,7 +47,7 @@ namespace Aukcje.Controls
             }
         }
 
-        public void DeleteAuctoin(CommandEventArgs e)
+        public void DeleteAuction(CommandEventArgs e)
         {
             int id = Convert.ToInt32(e.CommandArgument);
 

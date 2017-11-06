@@ -68,11 +68,6 @@ namespace Aukcje
                     return (Models.Categories)Convert.ToInt32(categoryID);
                 return (Models.Categories)0;
             }
-
-            set
-            {
-                throw new NotImplementedException();//I leave it here to check if it ever occurs
-            }
         }
 
         public string SearchedItem

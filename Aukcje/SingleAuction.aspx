@@ -1,10 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="SingleAuction.aspx.cs" Inherits="Aukcje.SingleAuction" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
     <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
     <link href="styles/SingleAuctionCSS.css" rel="stylesheet" type="text/css" />
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="ContentBody" ContentPlaceHolderID="MainContent" runat="server">
     <div class="content-container">
         <div class="SiteMapContainer">
         </div>
@@ -51,7 +51,7 @@
                         </div>
                         <asp:Button runat="server" Width="200px" Height="50px" ValidationGroup="valGr" Text="Place Bid" />
                         <div>
-                                    <asp:ImageButton runat="server" ID="ImgBtnAddToFavourites" Height="50px" Width="50px" ImageUrl="~/Pictures/clear.jpg" OnClick="AddToFavourites_Click" />
+                                    <asp:ImageButton runat="server" ID="ImgBtnAddToFavourites" Height="50px" Width="50px" ImageUrl="~/Pictures/clear.png" OnClick="AddToFavourites_Click" />
                                     <asp:Label ID="lblAddedToFavourites" runat="server"></asp:Label>
                         </div>
                     </div>

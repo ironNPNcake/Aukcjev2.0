@@ -8,7 +8,7 @@
 
 
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<asp:Content ID="ContentHead" ContentPlaceHolderID="head" runat="server">
     <link href="styles/Styles.css" rel="stylesheet" type="text/css" />
 
 </asp:Content>
@@ -44,7 +44,7 @@
         <div class="displayingAuctions">
             <asp:ListView ID="ListViewAuctionsList" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
                 <LayoutTemplate>
-                    <table runat="server" id="table1">
+                    <table runat="server" id="tableDetail">
                         <tr>
                             <th style="width: 800px; text-align: center;" colspan="2">Auction Name</th>
                             <th style="width: 200px; text-align: center;">Actual Price</th>

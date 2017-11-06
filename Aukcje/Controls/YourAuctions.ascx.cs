@@ -39,7 +39,7 @@ namespace Aukcje.Controls
         protected void BtnDelete_OnCommandOnClick(object sender, CommandEventArgs e)
         {
             AttachPresenter();
-            Presenter.DeleteAuctoin(e);
+            Presenter.DeleteAuction(e);
         }
 
         protected void ListViewAuctions_OnItemUpdating(object sender, ListViewUpdateEventArgs e)

@@ -127,8 +127,8 @@
       <DependentUpon>DBModel.edmx</DependentUpon>
       <LastGenOutput>DBModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Pictures\clear.jpg" />
-    <Content Include="Pictures\fill.jpg" />
+    <Content Include="Pictures\fill.png" />
+    <Content Include="Pictures\clear.png" />
     <Content Include="SingleAuction.aspx" />
     <Content Include="CategoriesPage.aspx" />
     <Content Include="Controls\CommentsSection.ascx" />
@@ -386,7 +386,7 @@
       <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Models\Comment.cs" />
-    <Compile Include="Models\Filtering.cs" />
+    <Compile Include="Models\FilteringEnums.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SellerPage.aspx.cs">
       <DependentUpon>SellerPage.aspx</DependentUpon>

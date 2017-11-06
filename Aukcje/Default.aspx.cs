@@ -11,8 +11,6 @@ namespace Aukcje
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //CurrencyConverter a = new CurrencyConverter();
-           // to();
         }
     }
 }

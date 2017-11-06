@@ -47,21 +47,14 @@ namespace Aukcje.Controls
                 }
             }
 
-            //foreach (Auction auc in OutterList)
-            //{
-            //    string stat = auc.status;
-            //    switch (stat)
-            //    {
-            //        case "otwarte":
-            //            auc.status = Resources.Resource.StatusOpen;
-            //            break;
-            //        case "zakonczone":
-            //            auc.status = Resources.Resource.StatusClose;
-            //            break;
+            foreach (Auction auc in OutterList)
+            {
+                string stat = auc.status;
 
-            //    }
-
-            //}
+                stat = HttpContext.GetGlobalResourceObject("Resource", stat).ToString();
+                if (!string.IsNullOrEmpty(stat))
+                    auc.status = stat;
+            }
             return OutterList;
 
         }

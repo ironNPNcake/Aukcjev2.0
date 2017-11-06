@@ -21,7 +21,7 @@ namespace Aukcje.Controls
             {
                 if (indexes.LastOrDefault() == i)
                 {
-                    View.CheckBoxBrandsList.Items[i - 1].Selected = true;
+                    View.CheckBoxBrandsList.Items[i].Selected = true;
                     indexes.RemoveAt(indexes.Count - 1);
                 }
 
