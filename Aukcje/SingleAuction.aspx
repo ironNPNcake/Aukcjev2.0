@@ -51,8 +51,8 @@
                         </div>
                         <asp:Button runat="server" Width="200px" Height="50px" ValidationGroup="valGr" Text="Place Bid" />
                         <div>
-                            <asp:ImageButton runat="server" ID="ImgBtnAddToFavourites" Height="50px" Width="50px" ImageUrl="~/Pictures/clear.jpg" OnClick="AddToFavourites_Click" />
-                            <asp:Label ID="lblAddedToFavourites" runat="server"></asp:Label>
+                                    <asp:ImageButton runat="server" ID="ImgBtnAddToFavourites" Height="50px" Width="50px" ImageUrl="~/Pictures/clear.jpg" OnClick="AddToFavourites_Click" />
+                                    <asp:Label ID="lblAddedToFavourites" runat="server"></asp:Label>
                         </div>
                     </div>
 

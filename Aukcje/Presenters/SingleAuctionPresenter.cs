@@ -57,23 +57,26 @@ namespace Aukcje
 
         public void CheckFavourites()
         {
-            aspnet_Membership Users;
-            string UserName = View.UserName;
-            string fav;
-            using (var ctx = new bazaEntities())
+            if (HttpContext.Current.User.Identity.IsAuthenticated)
             {
-                Users = (from _User in ctx.aspnet_Users
-                         join tempUser in ctx.aspnet_Membership
-                         on _User.UserId equals tempUser.UserId
-                         where _User.UserName == UserName
-                         select tempUser).First();
-                fav = Users.FavouritesItems;
-            }
-            if(fav.IndexOf(View.Id.ToString()+'|')>-1)
-            {
-                View.LabelAddToFavourites.Text = "Already added to Favourites";
-                View.ImageButtonAddToFavourites.ImageUrl = "~/Pictures/fill.jpg";
-                View.ImageButtonAddToFavourites.Enabled = false;
+                aspnet_Membership Users;
+                string UserName = View.UserName;
+                string fav;
+                using (var ctx = new bazaEntities())
+                {
+                    Users = (from _User in ctx.aspnet_Users
+                             join tempUser in ctx.aspnet_Membership
+                             on _User.UserId equals tempUser.UserId
+                             where _User.UserName == UserName
+                             select tempUser).First();
+                    fav = Users.FavouritesItems;
+                }
+                if (fav.IndexOf(View.Id.ToString() + '|') > -1)
+                {
+                    //View.LabelAddToFavourites.Text = "Already added to Favourites";
+                    View.ImageButtonAddToFavourites.ImageUrl = "~/Pictures/fill.jpg";
+                    View.ImageButtonAddToFavourites.Enabled = false;
+                }
             }
         }
     }

@@ -42,6 +42,7 @@ namespace Aukcje
         public Label LabelAddToFavourites
         {
             get { return ListViewSingleAuction.Items[0].FindControl("lblAddedToFavourites") as Label; }
+            //set { ListViewSingleAuction.Items[0].FindControl("lblAddedToFavourites") = value; }
         }
 
         protected void ListViewSingleAuction_DataBound(object sender, EventArgs e)

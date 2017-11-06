@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div style="margin-top: 70px;"></div>
     <div class="content-container">
-        <asp:createuserwizard runat="server" ID="ctl00" BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="Medium" Height="345px" Width="394px">
+        <asp:createuserwizard runat="server" ID="ctl00" BackColor="#FFFBD6" BorderColor="#FFDFAD" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" Font-Size="Medium" Height="345px" Width="394px" FinishDestinationPageUrl="~/Default.aspx">
             <ContinueButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#990000" />
             <CreateUserButtonStyle BackColor="White" BorderColor="#CC9966" BorderStyle="Solid" BorderWidth="1px" Font-Names="Verdana" ForeColor="#990000" />
             <TitleTextStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
