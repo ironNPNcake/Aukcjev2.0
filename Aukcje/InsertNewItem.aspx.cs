@@ -15,6 +15,7 @@ namespace Aukcje
         {
             if (!Request.IsAuthenticated)
                 Response.Redirect(String.Format("Membership/Login.aspx?rdrect={0}",HttpContext.Current.Request.Url.AbsolutePath));
+            AttachPresenter();
         }
 
         protected void InsertButton_OnClick(object sender, EventArgs e)
@@ -22,6 +23,11 @@ namespace Aukcje
             AttachPresenter();
             Presenter.AddNewItem();
         }
+
+        public TextBox TxtBoxInsertNewBrandProp { get { return textBoxInsertNewBrand; } }
+        public DropDownList DropDownDownListBrand { get { return dropDownListBrands; } }
+        public TextBox TxtBoxInsertNewColorProp { get { return textBoxInsertNewColor; } }
+        public DropDownList DropDownListColor { get { return DropDownColorList; } }
 
         public string AuctionName
         {
@@ -75,6 +81,34 @@ namespace Aukcje
         {
             AttachPresenter();
             return Presenter.ReturnCategories2DDList();
+        }
+        public IEnumerable<string> SelectBrands()
+        {
+            AttachPresenter();
+            return Presenter.SelectBrands();
+        }
+
+        protected void dropDownBrandList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AttachPresenter();
+            Presenter.CheckIfNewBrand();
+        }
+
+
+        protected void dropDownCategoryList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            dropDownListBrands.DataBind();
+        }
+        public IEnumerable<FiltersTable> SelectColors()
+        {
+            AttachPresenter();
+            return Presenter.SelectFiltersColors();
+        }
+
+        protected void DropDownColorList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            AttachPresenter();
+            Presenter.CheckIfNewColor();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Aukcje.Controls
     {
         public void UpdatePicture()
         {
-            View.UserPictureProp.ImageUrl = $"~/UserPictureHandler.ashx?LoggedUserName={HttpContext.Current.Request.LogonUserIdentity.Name}";
+            View.UserPictureProp.ImageUrl = $"~/UserPictureHandler.ashx?UserName={HttpContext.Current.User.Identity.Name}";
         }
     }
 }

@@ -46,7 +46,18 @@ namespace Aukcje
                 }
                 list = tempList;
             }
+            //brand filtering
 
+            tempList = new List<Auction>();
+            if(View.FilterBrandsCheckBoxList.SelectedIndex > -1)
+            {
+                foreach (ListItem listItem in View.FilterBrandsCheckBoxList.Items)
+                {
+                    if (listItem.Selected)
+                        tempList.AddRange(list.Where(p => p.Brand == Convert.ToString(listItem.Text)).ToList());
+                }
+                list = tempList;
+            }
 
 
             foreach (Auction auction in list)

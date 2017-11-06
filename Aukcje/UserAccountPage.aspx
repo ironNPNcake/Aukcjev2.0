@@ -15,6 +15,10 @@
     <div class="content-container">
         
         <uc:AccountDetails ID="AccountDetails" runat="server"/>
+        <asp:Button runat="server" ID="changeProfilePictureShow" OnClick="showChangeProfilePicture_Click" Text="Change ProfilePicture"/>
+        <asp:FileUpload ID="FileUploadProfilePicture" runat="server" Visible ="false" />
+        <asp:Button ID="ButtonProfilePicture" runat="server" Visible="false" OnClick="changeProfilePicture_Click" Text="Change"/>
+        <br />
 
         <uc:YourAuctions runat="server" />
 

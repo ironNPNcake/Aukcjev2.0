@@ -111,6 +111,7 @@
       <DependentUpon>baza.mdf</DependentUpon>
     </Content>
     <Content Include="Controls\AccountDetails.ascx" />
+    <Content Include="Controls\BrandFilter.ascx" />
     <Content Include="Controls\CategoryTree.ascx" />
     <Content Include="Controls\FavouritesList.ascx" />
     <Content Include="Controls\FiltersCheckBoxes.ascx" />
@@ -201,12 +202,23 @@
     <Compile Include="Auction.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="BrandsName.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="CategoriesTable.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Comment.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Controls\BrandFilter.ascx.cs">
+      <DependentUpon>BrandFilter.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\BrandFilter.ascx.designer.cs">
+      <DependentUpon>BrandFilter.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BrandFilterPresenter.cs" />
     <Compile Include="Controls\FiltersCheckBoxes.ascx.cs">
       <DependentUpon>FiltersCheckBoxes.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -267,8 +279,8 @@
       <DependentUpon>FavouritesList.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controls\FavouritesListPresenter.cs" />
-    <Compile Include="Controls\ICategoryTreeView.cs" />
-    <Compile Include="Controls\ISearchBarView.cs" />
+    <Compile Include="Controls\IControls\ICategoryTreeView.cs" />
+    <Compile Include="Controls\IControls\ISearchBarView.cs" />
     <Compile Include="Controls\SearchBar.ascx.cs">
       <DependentUpon>SearchBar.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -293,14 +305,15 @@
     </Compile>
     <Compile Include="Controls\AccountDetailsPresenter.cs" />
     <Compile Include="Controls\CommentsSectionPresenter.cs" />
-    <Compile Include="Controls\IAccountDetails.cs" />
-    <Compile Include="Controls\ICommentsSectionView.cs" />
-    <Compile Include="Controls\IYourAuctionsView.cs" />
+    <Compile Include="Controls\IControls\IAccountDetails.cs" />
+    <Compile Include="Controls\IControls\ICommentsSectionView.cs" />
+    <Compile Include="Controls\IControls\IYourAuctionsView.cs" />
     <Compile Include="Controls\YourAuctionsPresenter.cs" />
     <Compile Include="IViews\IAuctionsListView.cs" />
     <Compile Include="IViews\ISellerPageView.cs" />
     <Compile Include="IViews\ISingleAuctionView.cs" />
     <Compile Include="Presenters\SellerPagePresenter.cs" />
+    <Compile Include="Presenters\UserAccountPagePresenter.cs" />
     <Compile Include="SingleAuction.aspx.cs">
       <DependentUpon>SingleAuction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

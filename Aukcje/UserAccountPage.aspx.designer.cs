@@ -22,6 +22,33 @@ namespace Aukcje {
         protected global::Aukcje.Controls.AccountDetails AccountDetails;
         
         /// <summary>
+        /// changeProfilePictureShow control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button changeProfilePictureShow;
+        
+        /// <summary>
+        /// FileUploadProfilePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload FileUploadProfilePicture;
+        
+        /// <summary>
+        /// ButtonProfilePicture control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonProfilePicture;
+        
+        /// <summary>
         /// FavouritesList control.
         /// </summary>
         /// <remarks>

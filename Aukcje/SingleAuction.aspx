@@ -12,7 +12,7 @@
         <%-- <asp:LinqDataSource ID="LinqDataSource1" runat="server" Select="pokaz_to"></asp:LinqDataSource> --%>
 
 
-        <asp:ListView ID="ListViewSingleAuction" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction">
+        <asp:ListView ID="ListViewSingleAuction" runat="server" SelectMethod="Select" ItemType="Aukcje.Auction" OnDataBound="ListViewSingleAuction_DataBound">
 
             <ItemTemplate>
 
@@ -53,7 +53,6 @@
                         <div>
                             <asp:ImageButton runat="server" ID="ImgBtnAddToFavourites" Height="50px" Width="50px" ImageUrl="~/Pictures/clear.jpg" OnClick="AddToFavourites_Click" />
                             <asp:Label ID="lblAddedToFavourites" runat="server"></asp:Label>
-                            <asp:CheckBox ID="asdasdasd" runat="server" />
                         </div>
                     </div>
 

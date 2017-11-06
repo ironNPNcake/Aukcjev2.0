@@ -20,6 +20,7 @@ namespace Aukcje.Controls
         public Image UserPictureProp
         {
             get { return UserPicture; }
+            set { UserPicture = value; }
         }
     }
 }

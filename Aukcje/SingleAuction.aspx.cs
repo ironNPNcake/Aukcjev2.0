@@ -11,8 +11,8 @@ namespace Aukcje
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-   /*         AttachPresenter();
-            Presenter.CheckFavourites();*/
+            if(!Page.IsPostBack)
+                ListViewSingleAuction.DataBind();
         }
 
         public string UserName
@@ -33,13 +33,21 @@ namespace Aukcje
         protected void AddToFavourites_Click(object sender, ImageClickEventArgs e)
         {
             AttachPresenter();
-
             Presenter.AddToFavourites();
         }
-        public Label LblCheck
+        public ImageButton ImageButtonAddToFavourites
         {
-            get { return  new Label(); }
-            
+            get { return ListViewSingleAuction.Items[0].FindControl("ImgBtnAddToFavourites") as ImageButton; }
+        }
+        public Label LabelAddToFavourites
+        {
+            get { return ListViewSingleAuction.Items[0].FindControl("lblAddedToFavourites") as Label; }
+        }
+
+        protected void ListViewSingleAuction_DataBound(object sender, EventArgs e)
+        {
+            AttachPresenter();
+            Presenter.CheckFavourites();
         }
     }
 }

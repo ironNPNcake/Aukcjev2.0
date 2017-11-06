@@ -12,7 +12,10 @@ namespace Aukcje.Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!Page.IsPostBack)
+            {
+               
+            }
         }
         public IEnumerable SelectUser()
         {
@@ -29,16 +32,18 @@ namespace Aukcje.Controls
                 return HttpContext.Current.Request.QueryString["UID"];
             }
         }
-        public Image Image { get; set; }
-
-        protected void UserPicture_DataBinding(object sender, EventArgs e)
+        public Image Image
         {
-            Image = ListViewAccountDetails.Items[0].FindControl("UserPicture") as Image;
+            get
+            {
+                return ListViewAccountDetails.Items[0].FindControl("UserPicture") as System.Web.UI.WebControls.Image;
+            }
         }
 
-        protected void UserPicture_Init(object sender, EventArgs e)
+        protected void ListViewAccountDetails_DataBound(object sender, EventArgs e)
         {
-         //   Image = ListViewAccountDetails.Items[0].FindControl("UserPicture") as Image;
+            AttachPresenter();
+            Presenter.UpdatePicture();
         }
     }
 }

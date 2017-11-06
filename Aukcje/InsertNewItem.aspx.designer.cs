@@ -103,6 +103,24 @@ namespace Aukcje {
         protected global::System.Web.UI.WebControls.DropDownList dropDownCategoryList;
         
         /// <summary>
+        /// dropDownListBrands control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropDownListBrands;
+        
+        /// <summary>
+        /// textBoxInsertNewBrand control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox textBoxInsertNewBrand;
+        
+        /// <summary>
         /// ColorLabel control.
         /// </summary>
         /// <remarks>
@@ -121,13 +139,13 @@ namespace Aukcje {
         protected global::System.Web.UI.WebControls.DropDownList DropDownColorList;
         
         /// <summary>
-        /// ObjectDataSource4ColorFilters control.
+        /// textBoxInsertNewColor control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ObjectDataSource4ColorFilters;
+        protected global::System.Web.UI.WebControls.TextBox textBoxInsertNewColor;
         
         /// <summary>
         /// textDescription control.

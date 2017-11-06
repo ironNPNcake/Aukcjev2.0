@@ -37,13 +37,14 @@ namespace Aukcje
                              where _User.UserName == UserName
                              select tempUser).First();
                     string fav = Users.FavouritesItems;
-                    if(fav.IndexOf(View.Id.ToString())<0)
+                    if(string.IsNullOrEmpty(fav)|| fav.IndexOf(View.Id.ToString()+'|') < 0)
                     {
                         fav += $"{View.Id.ToString()}|";
                     }
                     Users.FavouritesItems = fav;
                     ctx.SaveChanges();
                 }
+                CheckFavourites();
             }
             catch
             {
@@ -70,7 +71,9 @@ namespace Aukcje
             }
             if(fav.IndexOf(View.Id.ToString()+'|')>-1)
             {
-                View.LblCheck.Text = "Already added to Favourites";
+                View.LabelAddToFavourites.Text = "Already added to Favourites";
+                View.ImageButtonAddToFavourites.ImageUrl = "~/Pictures/fill.jpg";
+                View.ImageButtonAddToFavourites.Enabled = false;
             }
         }
     }

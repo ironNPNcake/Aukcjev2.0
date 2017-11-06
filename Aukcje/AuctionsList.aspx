@@ -3,6 +3,8 @@
 <%@ Register TagPrefix="uc" TagName="Categories" Src="~/Controls/LeftSideMenu.ascx" %>
 <%@ Register Src="~/Controls/CategoryTree.ascx" TagPrefix="uc" TagName="CategoryTree" %>
 <%@ Register Src="~/Controls/FiltersCheckBoxes.ascx" TagPrefix="uc" TagName="FiltersCheckBoxes" %>
+<%@ Register Src="~/Controls/BrandFilter.ascx" TagPrefix="uc" TagName="BrandFilter" %>
+
 
 
 
@@ -23,7 +25,9 @@
                     <asp:TextBox runat="server" ID="textLowPrice" Width="40px"></asp:TextBox>- 
                     <asp:TextBox runat="server" ID="textHighPrice" Width="40px"></asp:TextBox>
                 </div>
+                <%-- Filtering checkboxes --%>
                 <uc:FiltersCheckBoxes runat="server" id="FiltersCheckBoxes" />
+                <uc:BrandFilter runat="server" id="BrandFilter" />
 
                 <asp:Button runat="server" ID="FilteringButton" Text="Filter" />
             </div>

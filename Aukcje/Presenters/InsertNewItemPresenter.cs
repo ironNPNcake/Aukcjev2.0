@@ -22,6 +22,11 @@ namespace Aukcje
         {
             try
             {
+                string _Brand;
+                if (View.DropDownDownListBrand.Visible)
+                    _Brand = View.TxtBoxInsertNewBrandProp.Text;
+                else
+                    _Brand = View.DropDownDownListBrand.SelectedItem.Text;
                 Auction currentItem = new Auction()
                 {
                     Title = View.AuctionName,
@@ -32,8 +37,21 @@ namespace Aukcje
                     Price = View.AuctionPrice,
                     seller = System.Web.Security.Membership.GetUser().UserName,
                     status = "otwarte",
+                    Brand = _Brand,
                     Image = View.AuctionImageBytes
                 };
+                if(View.TxtBoxInsertNewColorProp.Visible)
+                {
+                    FiltersTable newColor = new FiltersTable()
+                    {
+                        FilterResourceName = View.TxtBoxInsertNewColorProp.Text
+                    };
+                    using (var ctx = new bazaEntities())
+                    {
+                        ctx.FiltersTables.Add(newColor);
+                        ctx.SaveChanges();
+                    }
+                }
                 using (var ctx = new bazaEntities())
                 {
                     ctx.Auctions.Add(currentItem);
@@ -55,7 +73,38 @@ namespace Aukcje
         public IEnumerable<string> ReturnCategories2DDList()
         {
             List<string> list = Filters.ReturnCategoriesList().Select(p => p.CategoryResourceName).ToList<string>();
+            return list;
+        }
+        public void CheckIfNewBrand()
+        {
+            if (View.DropDownDownListBrand.SelectedIndex == View.DropDownDownListBrand.Items.Count - 1)
+            {
+                View.TxtBoxInsertNewBrandProp.Visible = true;
+            }
+            else
+                View.TxtBoxInsertNewBrandProp.Visible = false;
 
+        }
+        public void CheckIfNewColor()
+        {
+            if (View.DropDownListColor.SelectedIndex == View.DropDownListColor.Items.Count - 1)
+                View.TxtBoxInsertNewColorProp.Visible = true;
+            else
+                View.TxtBoxInsertNewColorProp.Visible = false;
+        }
+        public IEnumerable<string> SelectBrands()
+        {
+            List<string> list = new List<string>();
+
+            list = Filters.ReturnBrandsList(View.AuctionCategoryTypeInt);
+
+            list.Add("+Add new Brand");
+            return list;
+        }
+        public IEnumerable<FiltersTable> SelectFiltersColors()
+        {
+            List<FiltersTable> list = Filters.ReturnFiltersList().ToList();
+            list.Add(new FiltersTable { FilterResourceName = "+Add New Color" });
             return list;
         }
     }

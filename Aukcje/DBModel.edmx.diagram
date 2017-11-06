@@ -6,12 +6,13 @@
     <edmx:Diagrams>
       <Diagram DiagramId="01fbc8fc5d694c4ea873c64e731d3b19" Name="Diagram1">
         <EntityTypeShape EntityType="Model.aspnet_Users" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Auction" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.CategoriesTable" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.Comment" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.FiltersTable" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="Model.aspnet_Membership" Width="1.5" PointX="3" PointY="1" />
         <AssociationConnector Association="Model.FK__aspnet_Me__UserI__22AA2996" />
+        <EntityTypeShape EntityType="Model.BrandsName" Width="1.5" PointX="7.375" PointY="3.125" />
+        <EntityTypeShape EntityType="Model.FiltersTable" Width="1.5" PointX="9.375" PointY="3.125" />
+        <EntityTypeShape EntityType="Model.Auction" Width="1.5" PointX="5.25" PointY="1.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

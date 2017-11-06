@@ -40,8 +40,18 @@
                                 <asp:Label ID="CategoryLabel" runat="server">Category:</asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList runat="server" ID="dropDownCategoryList" SelectMethod="SelectCategories">
+                                <asp:DropDownList runat="server" ID="dropDownCategoryList" SelectMethod="SelectCategories" AutoPostBack="true" OnSelectedIndexChanged="dropDownCategoryList_SelectedIndexChanged" >
                                 </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label runat="server">Brand</asp:Label>
+                            </td>
+                            <td>
+                                <asp:DropDownList runat="server" ID="dropDownListBrands" SelectMethod="SelectBrands" OnSelectedIndexChanged="dropDownBrandList_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
+                                &nbsp;
+                                <asp:TextBox runat="server" ID="textBoxInsertNewBrand" Visible="false"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -49,9 +59,11 @@
                                 <asp:Label ID="ColorLabel" runat="server">Color:</asp:Label>
                             </td>
                             <td>
-                                <asp:DropDownList runat="server" ID="DropDownColorList" DataSourceID="ObjectDataSource4ColorFilters" DataTextField="filterResourceName" DataValueField="ID">
+                                <asp:DropDownList runat="server" ID="DropDownColorList"  DataTextField="filterResourceName" DataValueField="ID" SelectMethod="SelectColors" OnSelectedIndexChanged="DropDownColorList_SelectedIndexChanged" AutoPostBack="true">
                                 </asp:DropDownList>
-                                <asp:ObjectDataSource ID="ObjectDataSource4ColorFilters" runat="server" SelectMethod="ReturnFiltersList" TypeName="Aukcje.Filters"></asp:ObjectDataSource>
+                                &nbsp;
+                                <asp:TextBox runat="server" ID="textBoxInsertNewColor" Visible="false"></asp:TextBox>
+                                <%--<asp:ObjectDataSource ID="ObjectDataSource4ColorFilters" runat="server" SelectMethod="ReturnFiltersList" TypeName="Aukcje.Filters"></asp:ObjectDataSource>--%>
                             </td>
                         </tr>
                         <tr>

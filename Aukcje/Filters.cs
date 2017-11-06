@@ -38,6 +38,33 @@ namespace Aukcje
             }
             return list;
         }
+
+        public static List<string> ReturnBrandsList()
+        {
+            return ReturnBrandsList(0);
+        }
+        public static List<string> ReturnBrandsList(int CategoryId)
+        {
+            List<string> list;
+            List<Auction> AuctionsList;
+            using (var ctx = new bazaEntities())
+            {
+                //list = ctx.BrandsNames.ToList();
+                AuctionsList = ctx.Auctions.Where(p => p.Brand != null).ToList();
+            }
+            if (CategoryId > 0)
+                AuctionsList = AuctionsList.Where(p => p.Category == CategoryId).ToList();
+            list = AuctionsList.Select(p => p.Brand).Distinct().OrderBy(p => p).ToList();
+
+            //List<string> tempList = list.Select(p => p.BrandResourceName).ToList();
+            //RemoveWhiteSpacesAndReplaceToGlobalResources(ref tempList);
+            //for (int i = 0; i < list.Count; i++)
+            //{
+            //    list[i].BrandResourceName = tempList[i];
+            //}
+            return list;
+        }
+
         private static void RemoveWhiteSpacesAndReplaceToGlobalResources(ref List<string> list)
         {
             for (int i = 0; i < list.Count; i++)

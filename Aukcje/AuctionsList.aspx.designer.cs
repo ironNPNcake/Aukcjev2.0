@@ -40,6 +40,15 @@ namespace Aukcje {
         protected global::Aukcje.Controls.FiltersCheckBoxes FiltersCheckBoxes;
         
         /// <summary>
+        /// BrandFilter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Aukcje.Controls.BrandFilter BrandFilter;
+        
+        /// <summary>
         /// FilteringButton control.
         /// </summary>
         /// <remarks>

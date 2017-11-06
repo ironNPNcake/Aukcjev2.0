@@ -85,6 +85,11 @@ namespace Aukcje
             get { return FiltersCheckBoxes.FilterColorCheckBoxList; }
             set { FiltersCheckBoxes.FilterColorCheckBoxList = value; }
         }
+        public CheckBoxList FilterBrandsCheckBoxList
+        {
+            get { return BrandFilter.CheckBoxBrandsList; }
+            set { BrandFilter.CheckBoxBrandsList = value; }
+        }
     }
 
 

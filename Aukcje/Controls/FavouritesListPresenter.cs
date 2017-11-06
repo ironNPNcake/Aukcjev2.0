@@ -26,13 +26,17 @@ namespace Aukcje.Controls
             if (!string.IsNullOrEmpty(favIds))
             {
                 List<string> favIdsArray = favIds.Split(new char[] { '|' }).ToList<string>();
+                favIdsArray.Sort();
+                favIdsArray.RemoveAt(0);
+                List<int> favIdsArrayInt = new List<int>(favIdsArray.Select(int.Parse));
 
                 using (var ctx = new bazaEntities())
                 {
                     list = ctx.Auctions.ToList();
                 }
-                favIdsArray.Sort();
-                favIdsArray.RemoveAt(0);
+                favIdsArrayInt.Sort();
+              //  favIdsArrayInt.RemoveAt(0);
+                favIdsArray = favIdsArrayInt.Select(p => p.ToString()).ToList();
                 foreach (Auction _auc in list)
                 {
                     if (Convert.ToString(_auc.ID) == favIdsArray.FirstOrDefault())
@@ -43,21 +47,21 @@ namespace Aukcje.Controls
                 }
             }
 
-            foreach (Auction auc in OutterList)
-            {
-                string stat = auc.status;
-                switch (stat)
-                {
-                    case "otwarte":
-                        auc.status = Resources.Resource.StatusOpen;
-                        break;
-                    case "zakonczone":
-                        auc.status = Resources.Resource.StatusClose;
-                        break;
+            //foreach (Auction auc in OutterList)
+            //{
+            //    string stat = auc.status;
+            //    switch (stat)
+            //    {
+            //        case "otwarte":
+            //            auc.status = Resources.Resource.StatusOpen;
+            //            break;
+            //        case "zakonczone":
+            //            auc.status = Resources.Resource.StatusClose;
+            //            break;
 
-                }
+            //    }
 
-            }
+            //}
             return OutterList;
 
         }

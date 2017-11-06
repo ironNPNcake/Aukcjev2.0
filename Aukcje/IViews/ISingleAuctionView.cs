@@ -11,6 +11,5 @@ namespace Aukcje
     {
         string UserName { get; }
         int Id { get; }
-        Label LblCheck { get; }
     }
 }

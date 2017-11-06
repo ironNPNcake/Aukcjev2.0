@@ -30,6 +30,9 @@ namespace Aukcje.Controls
         return list;
         }
         
-
+        public void UpdatePicture()
+        {
+                View.Image.ImageUrl = String.Format("~/UserPictureHandler.ashx?UserName={0}", View.UName);
+        }
     }
 }

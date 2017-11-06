@@ -13,12 +13,12 @@ namespace Aukcje
 
         public void ProcessRequest(HttpContext context)
         {
-            if (!String.IsNullOrEmpty(context.Request.QueryString["LoggedUserName"]))
+            if (!String.IsNullOrEmpty(context.Request.QueryString["UserName"]))
             {
 
 
                 byte[] binary;
-                string loggedUserName = Convert.ToString(context.Request.QueryString["LoggedUserName"]);
+                string loggedUserName = Convert.ToString(context.Request.QueryString["UserName"]);
                 using (var ctx = new bazaEntities())
                 {
                     binary = (from userM in ctx.aspnet_Membership
