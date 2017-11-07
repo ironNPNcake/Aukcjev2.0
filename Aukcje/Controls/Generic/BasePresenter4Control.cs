@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Aukcje;
 
-namespace Aukcje
+namespace Aukcje.Controls
 {
-    public abstract class BasePresenter<TView> : BasePresenter where TView : IBaseView
+    public abstract class BasePresenter4Control<TView> : BasePresenter where TView : IBaseView
     {
         AuctionRepository _aRepo;
         public AuctionRepository AuctionRepo
@@ -37,7 +38,26 @@ namespace Aukcje
                 return _mRepo;
             }
         }
-
+        UserRepository _uRepo;
+        public UserRepository UserRepo
+        {
+            get
+            {
+                if (_uRepo == null)
+                    _uRepo = new UserRepository();
+                return _uRepo;
+            }
+        }
+        CategoryRepository _ctRepo;
+        public CategoryRepository CategoryRepo
+        {
+            get
+            {
+                if (_ctRepo == null)
+                    _ctRepo = new CategoryRepository();
+                return _ctRepo;
+            }
+        }
         public new TView View
         {
             get
@@ -46,14 +66,8 @@ namespace Aukcje
             }
             set
             {
-                base.View = value;
+                View = value;
             }
         }
-
     }
-    public class BasePresenter : IBasePresenter
-    {
-        public IBaseView View { get; set; }
-    }
-
 }

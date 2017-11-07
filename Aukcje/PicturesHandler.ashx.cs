@@ -12,24 +12,26 @@ namespace Aukcje
     /// </summary>
     public class Handler : IHttpHandler
     {
+        AuctionRepository _aRepo;
+        AuctionRepository AuctionRepo
+        {
+            get
+            {
+                if (_aRepo == null)
+                    _aRepo = new AuctionRepository();
+                return _aRepo;
+            }
+        }
 
         public void ProcessRequest(HttpContext context)
         {
             if (!String.IsNullOrEmpty(context.Request.QueryString["ID"]))
             {
-
-
-                byte[] binary;
                 int id = Convert.ToInt32(context.Request.QueryString["ID"]);
-                using (var ctx = new bazaEntities())
-                {
-                    binary = ctx.Auctions.Where(p => p.ID == id).Select(p => p.Image).FirstOrDefault();
-                }
+                byte[] binary = AuctionRepo.GetAuctionImageBytes(id);
 
                 //   list = list.Where(p => p.ID == 2);
                 //var prop = list.GetType().GetProperty("Image");
-
-
 
                 //var obj = prop.GetValue(list);
                 //byte[] binary = obj as byte[];

@@ -32,7 +32,7 @@ namespace Aukcje.Controls
         public void Update(Aukcje.Auction objAuction)
         {
             AttachPresenter();
-            Presenter.UpdateAuction(objAuction, ImageBytes);
+            Presenter.UpdateAuction(objAuction);
         }
 
 

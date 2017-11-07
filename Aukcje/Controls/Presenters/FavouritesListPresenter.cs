@@ -13,16 +13,7 @@ namespace Aukcje.Controls
             List<Auction> OutterList = new List<Auction>();
 
             string user = View.loggedUser;
-            string favIds;
-
-            using (var ctx = new bazaEntities())
-            {
-                favIds = (from searchedUser in ctx.aspnet_Users
-                          join _user in ctx.aspnet_Membership
-                          on searchedUser.UserId equals _user.UserId
-                          where searchedUser.UserName == user
-                          select _user.FavouritesItems).FirstOrDefault();
-            }
+            string favIds = MembershipRepo.ReturnFavouritesString(user);
             if (!string.IsNullOrEmpty(favIds))
             {
                 List<string> favIdsArray = favIds.Split(new char[] { '|' }).ToList<string>();
@@ -30,10 +21,7 @@ namespace Aukcje.Controls
                 favIdsArray.RemoveAt(0);
                 List<int> favIdsArrayInt = new List<int>(favIdsArray.Select(int.Parse));
 
-                using (var ctx = new bazaEntities())
-                {
-                    list = ctx.Auctions.ToList();
-                }
+                list = AuctionRepo.GetAuctions();
                 favIdsArrayInt.Sort();
               //  favIdsArrayInt.RemoveAt(0);
                 favIdsArray = favIdsArrayInt.Select(p => p.ToString()).ToList();
@@ -51,7 +39,7 @@ namespace Aukcje.Controls
             {
                 string stat = auc.status;
 
-                stat = HttpContext.GetGlobalResourceObject("Resource", stat).ToString();
+                //stat = HttpContext.GetGlobalResourceObject("Resource", stat).ToString();
                 if (!string.IsNullOrEmpty(stat))
                     auc.status = stat;
             }

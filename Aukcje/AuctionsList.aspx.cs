@@ -26,7 +26,7 @@ namespace Aukcje
         }
         public IEnumerable Select()
         {
-            AttachPresenter();
+//            AttachPresenter();
             return Presenter.SelectAuctionsList();
         }
 

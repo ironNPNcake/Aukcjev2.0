@@ -30,11 +30,8 @@ namespace Aukcje.Controls
             string cat = HttpContext.GetGlobalResourceObject("Resource", "Categories").ToString();
             MenuItem root = new MenuItem(cat);
             List<MenuItem> kids = new List<MenuItem>();
-            List<CategoriesTable> list;
-            using (var ctx = new bazaEntities())
-            {
-                list = ctx.CategoriesTables.ToList();
-            }
+            IEnumerable<CategoriesTable> list = CategoryRepo.GetCategoriesNames();
+            
             foreach (CategoriesTable catTable in list)
             {
                 string resCategory = Filters.TryFindCategoryResource(catTable.ID);

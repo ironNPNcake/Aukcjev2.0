@@ -8,6 +8,8 @@ namespace Aukcje
 {
     public class InsertNewItemPresenter : BasePresenter<InsertNewItem>
     {
+        
+
         private void ClearLabels()
         {
             View.ControlLabel.Text = "";
@@ -46,17 +48,9 @@ namespace Aukcje
                     {
                         FilterResourceName = View.TxtBoxInsertNewColorProp.Text
                     };
-                    using (var ctx = new bazaEntities())
-                    {
-                        ctx.FiltersTables.Add(newColor);
-                        ctx.SaveChanges();
-                    }
+                    ColorRepo.AddColor(newColor);
                 }
-                using (var ctx = new bazaEntities())
-                {
-                    ctx.Auctions.Add(currentItem);
-                    ctx.SaveChanges();
-                }
+                AuctionRepo.AddAuctions(currentItem);
             }
             catch
             {

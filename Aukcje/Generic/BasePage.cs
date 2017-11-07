@@ -18,7 +18,6 @@ namespace Aukcje
                 if (controlInvokeThePostBack.Contains("ddlLanguage"))
                 {
                     Session["lang"] = Request.Form[controlInvokeThePostBack];
-                  //  Response.Cookies.Add(new HttpCookie("lang", Request.Form[controlInvokeThePostBack]));
                 }
             }
 

@@ -9,19 +9,14 @@ namespace Aukcje
 {
     public class AuctionsListPresenter : BasePresenter<AuctionsList>
     {
-
-        
-        public IEnumerable SelectAuctionsList()
+        public IEnumerable<Auction> SelectAuctionsList()
         {
-            IEnumerable<Auction> list;
-            using (var ctx = new bazaEntities())
-            {
-                list = ctx.Auctions.ToList();
-            }
+            IEnumerable<Auction> list = AuctionRepo.GetAuctions();
+            
             list = list.Where(p => p.status == "otwarte");
             //catgory filtering
-            if((int)View.FilterCategory>0)
-            list = list.Where(p => p.Category == (int)View.FilterCategory);
+            if ((int)View.FilterCategory > 0)
+                list = list.Where(p => p.Category == (int)View.FilterCategory);
             //     ((Aukcje.Site)this.Page.Master).changeValueInDropDowCategoryList((int)category);
 
             if (!String.IsNullOrEmpty(View.SearchedItem))
@@ -49,7 +44,7 @@ namespace Aukcje
             //brand filtering
 
             tempList = new List<Auction>();
-            if(View.FilterBrandsCheckBoxList.SelectedIndex > -1)
+            if (View.FilterBrandsCheckBoxList.SelectedIndex > -1)
             {
                 foreach (ListItem listItem in View.FilterBrandsCheckBoxList.Items)
                 {

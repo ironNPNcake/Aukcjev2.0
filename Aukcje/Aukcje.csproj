@@ -218,7 +218,7 @@
     <Compile Include="Controls\BrandFilter.ascx.designer.cs">
       <DependentUpon>BrandFilter.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\BrandFilterPresenter.cs" />
+    <Compile Include="Controls\Presenters\BrandFilterPresenter.cs" />
     <Compile Include="Controls\FiltersCheckBoxes.ascx.cs">
       <DependentUpon>FiltersCheckBoxes.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -226,8 +226,8 @@
     <Compile Include="Controls\FiltersCheckBoxes.ascx.designer.cs">
       <DependentUpon>FiltersCheckBoxes.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FiltersCheckBoxesPresenter.cs" />
-    <Compile Include="Controls\LeftSideMenuPresenter.cs" />
+    <Compile Include="Controls\Presenters\FiltersCheckBoxesPresenter.cs" />
+    <Compile Include="Controls\Presenters\LeftSideMenuPresenter.cs" />
     <Compile Include="Controls\UserPictureMin.ascx.cs">
       <DependentUpon>UserPictureMin.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -235,7 +235,7 @@
     <Compile Include="Controls\UserPictureMin.ascx.designer.cs">
       <DependentUpon>UserPictureMin.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\UserPictureMinPresenter.cs" />
+    <Compile Include="Controls\Presenters\UserPictureMinPresenter.cs" />
     <Compile Include="DBModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -251,7 +251,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Filters.cs" />
+    <Compile Include="Models\Filters.cs" />
     <Compile Include="FiltersTable.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
@@ -259,8 +259,8 @@
     <Compile Include="Generic\BaseView.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Controls\BasePresenter4Control.cs" />
-    <Compile Include="Controls\BaseView4Control.cs">
+    <Compile Include="Controls\Generic\BasePresenter4Control.cs" />
+    <Compile Include="Controls\Generic\BaseView4Control.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\CategoryTree.ascx.cs">
@@ -270,7 +270,7 @@
     <Compile Include="Controls\CategoryTree.ascx.designer.cs">
       <DependentUpon>CategoryTree.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\CategoryTreePresenter.cs" />
+    <Compile Include="Controls\Presenters\CategoryTreePresenter.cs" />
     <Compile Include="Controls\FavouritesList.ascx.cs">
       <DependentUpon>FavouritesList.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -278,7 +278,7 @@
     <Compile Include="Controls\FavouritesList.ascx.designer.cs">
       <DependentUpon>FavouritesList.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\FavouritesListPresenter.cs" />
+    <Compile Include="Controls\Presenters\FavouritesListPresenter.cs" />
     <Compile Include="Controls\IControls\ICategoryTreeView.cs" />
     <Compile Include="Controls\IControls\ISearchBarView.cs" />
     <Compile Include="Controls\SearchBar.ascx.cs">
@@ -288,12 +288,13 @@
     <Compile Include="Controls\SearchBar.ascx.designer.cs">
       <DependentUpon>SearchBar.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\SearchBarPresenter.cs" />
-    <Compile Include="CurrencyConverter.cs" />
+    <Compile Include="Controls\Presenters\SearchBarPresenter.cs" />
+    <Compile Include="Models\CurrencyConverter.cs" />
     <Compile Include="Generic\IBasePresenter.cs" />
     <Compile Include="Generic\IBaseView.cs" />
+    <Compile Include="Models\FiltersRepoProperties.cs" />
     <Compile Include="Presenters\AuctionsListPresenter.cs" />
-    <Compile Include="BasePage.cs">
+    <Compile Include="Generic\BasePage.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\AccountDetails.ascx.cs">
@@ -303,17 +304,23 @@
     <Compile Include="Controls\AccountDetails.ascx.designer.cs">
       <DependentUpon>AccountDetails.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Controls\AccountDetailsPresenter.cs" />
-    <Compile Include="Controls\CommentsSectionPresenter.cs" />
+    <Compile Include="Controls\Presenters\AccountDetailsPresenter.cs" />
+    <Compile Include="Controls\Presenters\CommentsSectionPresenter.cs" />
     <Compile Include="Controls\IControls\IAccountDetails.cs" />
     <Compile Include="Controls\IControls\ICommentsSectionView.cs" />
     <Compile Include="Controls\IControls\IYourAuctionsView.cs" />
-    <Compile Include="Controls\YourAuctionsPresenter.cs" />
+    <Compile Include="Controls\Presenters\YourAuctionsPresenter.cs" />
     <Compile Include="IViews\IAuctionsListView.cs" />
     <Compile Include="IViews\ISellerPageView.cs" />
     <Compile Include="IViews\ISingleAuctionView.cs" />
     <Compile Include="Presenters\SellerPagePresenter.cs" />
     <Compile Include="Presenters\UserAccountPagePresenter.cs" />
+    <Compile Include="Repositories\AuctionRepository.cs" />
+    <Compile Include="Repositories\BrandRepository.cs" />
+    <Compile Include="Repositories\CategoryRepository.cs" />
+    <Compile Include="Repositories\ColorRepository.cs" />
+    <Compile Include="Repositories\MembershipRepository.cs" />
+    <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="SingleAuction.aspx.cs">
       <DependentUpon>SingleAuction.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

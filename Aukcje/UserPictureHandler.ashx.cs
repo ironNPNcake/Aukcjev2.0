@@ -10,23 +10,23 @@ namespace Aukcje
     /// </summary>
     public class UserPictureHandler : IHttpHandler
     {
+        MembershipRepository _mRepo;
+        MembershipRepository MembershipRepo
+        {
+            get
+            {
+                if (_mRepo == null)
+                    _mRepo = new MembershipRepository();
+                return _mRepo;
+            }
+        }
 
         public void ProcessRequest(HttpContext context)
         {
             if (!String.IsNullOrEmpty(context.Request.QueryString["UserName"]))
             {
-
-
-                byte[] binary;
                 string loggedUserName = Convert.ToString(context.Request.QueryString["UserName"]);
-                using (var ctx = new bazaEntities())
-                {
-                    binary = (from userM in ctx.aspnet_Membership
-                              join userU in ctx.aspnet_Users
-                              on userM.UserId equals userU.UserId
-                              where userU.UserName == loggedUserName
-                              select userM.Image).FirstOrDefault();
-                }
+                byte[] binary = MembershipRepo.GetUserImageBytes(loggedUserName);
 
                 //   list = list.Where(p => p.ID == 2);
                 //var prop = list.GetType().GetProperty("Image");

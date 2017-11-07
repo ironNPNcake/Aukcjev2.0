@@ -11,16 +11,8 @@ namespace Aukcje
         {
             byte[] PictureBytes = View.FileUploadProfilePictureProp.FileBytes;
             string UserName = HttpContext.Current.User.Identity.Name;
-            using (var ctx = new bazaEntities())
-            {
-                aspnet_Membership user = (from userU in ctx.aspnet_Users
-                                          join userM in ctx.aspnet_Membership
-                                          on userU.UserId equals userM.UserId
-                                          where userU.UserName == UserName
-                                          select userM).FirstOrDefault();
-                user.Image = PictureBytes;
-                ctx.SaveChanges();
-            }
+            MembershipRepo.UpdateUserPicture(UserName, PictureBytes);
+
             View.ButtonShowChangeProfileProp.Visible = true;
             View.FileUploadProfilePictureProp.Visible = false;
             View.ButtonChangeProfilePictureProp.Visible = false;
