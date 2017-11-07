@@ -154,6 +154,7 @@
     <Content Include="Site.Master" />
     <Content Include="SitePoor.Master" />
     <Content Include="PicturesHandler.ashx" />
+    <Content Include="UserPictureHandler.ashx" />
     <EntityDeploy Include="DBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
@@ -161,7 +162,6 @@
     <Content Include="DBModel.edmx.diagram">
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Content>
-    <Content Include="UserPictureHandler.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -251,10 +251,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Filters.cs" />
     <Compile Include="FiltersTable.cs">
       <DependentUpon>DBModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Filters.cs" />
     <Compile Include="Generic\BasePresenter.cs" />
     <Compile Include="Generic\BaseView.cs">
       <SubType>ASPXCodeBehind</SubType>
